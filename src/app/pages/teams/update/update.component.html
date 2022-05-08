@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+    <h3>Csapat módosítás</h3>
+    <mat-form-field class="max-width">
+      <mat-label>Csapatnév</mat-label>
+      <input matInput focus formControlName="name" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="max-width">
+        <mat-label>Helyszín</mat-label>
+        <input matInput focus formControlName="address" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="max-width">
+        <mat-label>Telefonszám</mat-label>
+        <input matInput focus formControlName="phoneNumber" required>
+      </mat-form-field>
+      <br>
+    <div style="display: flex; justify-content: flex-end;">
+      <button mat-button (click)="dialogRef.close()" class="margin-right">MÉGSEM</button>
+      <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">MÓDOSÍTÁS</button>
+    </div>
+  </form>

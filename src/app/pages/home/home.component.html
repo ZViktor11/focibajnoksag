@@ -1,0 +1,22 @@
+
+<app-container>
+    <ng-container >
+        <mat-card *ngIf="teamname" >
+            <span>
+                Szentesi FC egyik játékosa: {{teamname.name}}
+            </span>
+        </mat-card>
+    </ng-container>    
+    <mat-card *ngIf="firstTeam" >
+        <span>
+            Első csapat: {{firstTeam.name}}
+        </span>
+    </mat-card>
+    <ng-container *ngIf="(matches$) | async as matches;">
+        <mat-card *ngFor="let meccs of matches">
+            <span>
+                Gólkülönbség a {{meccs.home}} és {{meccs.away}} meccsen a hazai csapat számára: {{meccs.homeGoal|pipe:meccs.awayGoal}}
+            </span>
+        </mat-card>
+    </ng-container>
+</app-container>

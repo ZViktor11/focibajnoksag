@@ -1,0 +1,42 @@
+<form [formGroup]="form">
+    <h3>Meccs felvétel</h3>
+    <mat-form-field class="max-width">
+      <mat-label>Haza</mat-label>
+      <input matInput focus formControlName="home" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="max-width">
+        <mat-label>Vendég</mat-label>
+        <input matInput focus formControlName="away" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="max-width">
+        <mat-label>Hazai gólok száma</mat-label>
+        <input matInput focus formControlName="homeGoal" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="max-width">
+        <mat-label>Vendég gólok száma</mat-label>
+        <input matInput focus formControlName="awayGoal" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="max-width">
+        <mat-label>Hazai pontok</mat-label>
+        <input matInput focus formControlName="homePoints" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="max-width">
+        <mat-label>Vendég pontok</mat-label>
+        <input matInput focus formControlName="awayPoints" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="max-width">
+        <mat-label>Meccs időpontja</mat-label>
+        <input matInput focus formControlName="matchDate" required>
+      </mat-form-field>
+      <br>
+    <div style="display: flex; justify-content: flex-end;">
+      <button mat-button (click)="dialogRef.close()" class="margin-right">MÉGSEM</button>
+      <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">FELVÉTEL</button>
+    </div>
+  </form>

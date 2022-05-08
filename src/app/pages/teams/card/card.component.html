@@ -1,0 +1,20 @@
+<mat-card *ngIf="team" >
+    <mat-card-header>
+      <mat-card-title>Csapatnév: {{team.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <span><b>Helyszín: </b>{{team.address}}</span>
+        <br>
+        <span><b>Telefonszám: </b>{{team.phoneNumber}}</span>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-mini-fab class="action-btn" (click)="updateTeam()">
+        <mat-icon>update</mat-icon>
+    </button>
+      <button mat-mini-fab class="action-btn" (click)="deleteTeam()">
+          <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  
+ 

@@ -1,0 +1,71 @@
+
+<!--<app-container classes="container-1 flex">
+    <ng-container *ngIf="(list$) | async as list; else loadingOrError">
+      <app-card class="item" *ngFor="let item of list" [table]="item"></app-card>
+      <br>
+    </ng-container>
+    <ng-template #loadingOrError>
+      <ng-container *ngIf="errorObject; else loading">
+        <span class="centering">
+          Valami hiba történt!
+        </span>
+      </ng-container>
+      <ng-template #loading>
+        <span class="centering">
+          <mat-spinner></mat-spinner>
+        </span>
+      </ng-template>
+    </ng-template>
+  </app-container>-->
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Csapatnév </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="matchesPlayed">
+      <th mat-header-cell *matHeaderCellDef> Lejátszott meccsek száma </th>
+      <td mat-cell *matCellDef="let element"> {{element.matchesPlayed}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="goalDifference">
+      <th mat-header-cell *matHeaderCellDef> Gólkülönbség </th>
+      <td mat-cell *matCellDef="let element"> {{element.goalDifference}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="points">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="points"> Pontok száma </th>
+      <td mat-cell *matCellDef="let element"> {{element.points}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="modify">
+      <th mat-header-cell *matHeaderCellDef> Módosítás </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-mini-fab  (click)="updateTable(element.id)">
+          <mat-icon>update</mat-icon>
+        </button>
+      </td>
+      
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Törlés </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-mini-fab  (click)="deleteTable(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+      
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  
+<button mat-fab class="action-btn" (click)="openDialog()" >
+    <mat-icon>add</mat-icon>
+</button>
+

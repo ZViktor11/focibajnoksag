@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "focibajnoksag-2f1f5": {
+      "hosting": {
+        "myApp": [
+          "focibajnoksag-2f1f5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "focibajnoksag-2f1f5"
+  }
+}

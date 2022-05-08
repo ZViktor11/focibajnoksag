@@ -1,0 +1,29 @@
+<mat-card *ngIf="match" >
+    
+    <mat-card-content>
+        <span><b>Hazai: </b>{{match.home}}</span>
+        <br>
+        <span><b>Vendég: </b>{{match.away}}</span>
+        <br>
+        <span><b>Hazai gólszám: </b>{{match.homeGoal}}</span>
+        <br>
+        <span><b>Vendég gólszám: </b>{{match.awayGoal}}</span>
+        <br>
+        <span><b>Hazai pontok: </b>{{match.homePoints}}</span>
+        <br>
+        <span><b>Vendég pontok: </b>{{match.awayPoints}}</span>
+        <br>
+        <span><b>Meccs időpontja: </b>{{match.matchDate}}</span>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-mini-fab class="action-btn" (click)="updateMatch()">
+        <mat-icon>update</mat-icon>
+    </button>
+      <button mat-mini-fab class="action-btn" (click)="deleteMatch()">
+          <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  
+  
+ 

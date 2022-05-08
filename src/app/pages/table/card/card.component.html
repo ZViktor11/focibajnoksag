@@ -1,0 +1,20 @@
+<mat-card *ngIf="table" >
+    <mat-card-header>
+      <mat-card-title>{{table.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <span>{{table.matchesPlayed}}</span>
+        <br>
+        <span>{{table.goalDifference}}</span>
+        <br>
+        <span>{{table.points}}</span>
+    </mat-card-content>
+  </mat-card>
+  <button mat-fab class="action-btn" (click)="updateTable()">
+    <mat-icon>update</mat-icon>
+</button>
+  <button mat-fab class="action-btn" (click)="deleteTable()">
+      <mat-icon>delete</mat-icon>
+  </button>
+  
+ 
